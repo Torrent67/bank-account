@@ -1,9 +1,14 @@
+body {
+  background-image: url("img/ToM.jpeg");
+  background-size: cover;
+}
 .header {
   text-align: center;
   margin-bottom: 80px;
 }
 .row {
   display: flex;
+  margin-bottom: 80px;
 }
 .side {
   flex: 30%; /* Set the width of the sidebar */
@@ -30,15 +35,24 @@
 input {
   float: right;
 }
-h2{
+.current{
   margin-top: 200px;
   text-align: center;
   font-size: 30px;
-  background-color: #9aba93; /* Grey background color */
-  padding: 20px; /* Some padding */
+  background-color: #9aba93;
+  padding: 20px;
+  min-height: 300px;
+  max-width: 50%;
+  margin: auto;
+}
+.current:hover {
+  background-image: url("img/mcduck.gif");
+  background-size: cover;
+  color: white;
 }
 #current{
+  margin-top: 60px;
   font-size: 40px;
   text-align: center;
-  background-color: red;
+  background: rgba(100, 100, 100, 0.5);
 }

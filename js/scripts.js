@@ -65,8 +65,6 @@ $(function(){
       newAccount = bank.findAccount(existName, existId);
       $("#current").text(newAccount.balance);
     })
-
-
     $("#deposit").submit(function(event){
       event.preventDefault();
       var deposit = parseInt($("input#deposit").val());
@@ -79,5 +77,21 @@ $(function(){
       newAccount.Withdraw(withdraw);
       $("#current").text(newAccount.balance);
     });
+    $("#btnDHistory").click(function(){
+      $("#dHistory").empty();
+      var number = newAccount.deposits.length-1;
+      for (i=0; i <10; i++) {
+        $("#dHistory").append("<li>" +newAccount.deposits[number]+"</li>")
+        number--;
+      }
+    })
+    $("#btnWHistory").click(function(){
+      $("#wHistory").empty();
+      var number = newAccount.withdraws.length-1;
+      for (i=0; i <10; i++) {
+        $("#wHistory").append("<li>" +newAccount.withdraws[number]+"</li>")
+        number--;
+      }
+    })
   });
 });
