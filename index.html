@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <form id ="account" class = "item1">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name">
+          <label for="start">Initial Deposit:</label>
+          <input type="number" id="start">
+          <button type="submit" id="account">Create Account</button>
+        </div>
+        <div class="actions">
+        </form>
+        <form id="deposit">
+          <div class="form-group">
+            <label for="deposit">Deposit Amount:</label>
+            <input type="number" id="deposit">
+            <button type="submit" id="deposit">Deposit</button>
+          </div>
+        </form>
+        <form id="withdraw">
+          <div class="form-group">
+            <label for="withdraw">Withdrawal Amount:</label>
+            <input type="number" id="withdraw">
+            <button type="submit" id="withdraw">Withdraw</button>
+          </div>
+        </form>
+      </div>
+      <div class="current">
+        <h2>Current Balance</h2>
+        <p id="current"> </p>
+      </div>
+    </div>
+  </body>
+</html>

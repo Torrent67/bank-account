@@ -1,0 +1,14 @@
+form {
+  width: 50%;
+}
+.grid-container {
+}
+
+.item1 {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+.actions {
+  grid-column: 3 / span 3;
+  grid-row: 2;
+}
