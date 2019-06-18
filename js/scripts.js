@@ -4,7 +4,7 @@
 $(function(){
   function Bank () {
     this.accounts = [],
-    this.currentId= -1
+    this.currentId= 0
   }
 
   Bank.prototype.addAccount = function (newAccount) {
@@ -14,6 +14,15 @@ $(function(){
   Bank.prototype.assignId = function () {
     this.currentId +=1;
     return this.currentId;
+  }
+
+  Bank.prototype.findAccount = function(name, id) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (this.accounts[i].name === name || this.accounts[i].id == id) {
+        return this.accounts[i];
+      }
+    };
+    return false;
   }
 
 
@@ -41,13 +50,22 @@ $(function(){
   var balance;
 
 
-  $("#account").submit(function(event){
+  $("#newaccount").submit(function(event){
     event.preventDefault();
     name = $("input#name").val();
     balance = parseInt($("input#start").val());
     var newAccount = new Account(name,balance);
     bank.addAccount(newAccount);
     $("#current").text(newAccount.balance);
+
+    $("#existing").submit(function(event){
+      event.preventDefault();
+      var existName = $("input#nameSearch").val();
+      var existId= $("input#acctnum").val();
+      newAccount = bank.findAccount(existName, existId);
+      $("#current").text(newAccount.balance);
+    })
+
 
     $("#deposit").submit(function(event){
       event.preventDefault();
